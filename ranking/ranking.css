@@ -1,0 +1,239 @@
+a.book__ref {
+    text-decoration: none;
+    color: #161925;
+}
+a#first {
+    color: #F29559;
+}
+/* cor da estrelinha */
+.rating svg {
+    fill: #F29559;
+}
+body main {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+/* INDICAÇÃO D PÁGINA */
+div#ranking {
+    background-color: var(--fundoBranco);
+}
+div#ranking svg path {
+    fill: var(--fundoPreto);
+}
+body main .stats__container {
+    width: 70%;
+    height: 90%;
+    margin-top: 5rem;   
+    position: relative;
+    border-radius: .5rem;
+    border: solid .4rem var(--destaque);
+    display: grid;
+    place-items: center;
+}
+body main .stats__container .stats__container__title {
+    position: absolute;
+    left: 50%;
+    top: -5%;
+    transform: translateX(-50%);
+    width: 103%;
+    height: 16%;
+    border-radius: .5rem;
+    background-color: var(--destaque);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+body main .stats__container .stats__container__title svg {
+    width: 7rem;
+    height: 7rem;
+}
+body main .stats__container .stats__container__title h1 {
+    color: #F29559 !important;
+    font-size: 6rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 800;
+}
+
+/* CONTEÚDO DO RANKING */
+body main .stats__container .wrapper__itens {
+    width: 97%;
+    height: 80%;
+    margin-top: 8rem;
+    display: grid;
+    place-items: center;
+}
+body main .stats__container .wrapper__itens .itens__rank {
+    width: 100%;
+    height: 9rem;
+    background-color: var(--cinza);
+    border-radius: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+body main .stats__container .wrapper__itens #one {
+    width: 100%;
+    background-color: var(--destaque);
+}
+body main .stats__container .wrapper__itens #one p{
+    color: #F29559 !important;
+}
+body main .stats__container .wrapper__itens #one .item__name h1 { 
+    color: #F29559 !important; 
+}
+body main .stats__container .wrapper__itens .itens__rank .item__name {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 5rem;
+    gap: 2rem;
+}
+
+body main .stats__container .wrapper__itens .itens__rank .item__name .rank__order {
+    color: #161925 !important;
+}
+body main .stats__container .wrapper__itens .itens__rank .item__name img {
+    width: 7rem;
+    height: 70%;
+    border-radius: 50%;
+}
+body main .stats__container .wrapper__itens .itens__rank .item__name .book__name {
+    color: #161925 !important;
+}
+
+
+
+body main .stats__container .wrapper__itens .itens__rank .rating {
+    height: 100%;
+    width: 8rem;
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+body main .stats__container .wrapper__itens .itens__rank .rating {
+    color: var(--destaque);
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+body main .stats__container .wrapper__itens .itens__rank .rating svg {
+    width: 5rem;
+    height: 5rem;
+}
+
+@media (min-width: 1300px) {
+    html {
+        font-size: 55%;
+    }
+}
+@media (max-width: 1250px) {
+    html {
+        font-size: 50%;
+    }
+}
+@media (max-width: 1024px) {
+    html {
+        font-size: 45%;
+    }
+}
+@media (max-width: 900px) {
+    html {
+        font-size: 40%;
+    }
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 37%;
+    }
+    body main {
+        place-items: baseline;
+        justify-items: center;
+    }
+    body main .stats__container {
+        margin-top: 0 ;
+        border: none;
+        width: 99%;
+        padding-top: 5rem;
+    }
+    body main .stats__container .stats__container__title {
+        width: 100vw;
+        top: -0.4rem;
+        border-radius: 0;
+        border-bottom-left-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        justify-content: flex-start;
+        padding-left: 5rem;
+    }
+    body main .stats__container .stats__container__title svg {
+        display: none;
+    }
+}
+@media (max-width: 700px) { 
+    body main .stats__container .stats__container__title h1 {
+        width: 75%;
+    }
+}
+@media (max-width: 600px) { 
+    body main {
+        align-items: flex-end;
+    }
+    body main .stats__container .stats__container__title {
+        justify-content: flex-start;
+        height: 28%;
+        top: -22rem
+    }
+    body main .stats__container .stats__container__title h1 {
+        font-size: 7rem;        
+        width: 90%;
+        align-self: flex-end;
+        padding-bottom: 5rem;
+        font-weight: 800;
+    }
+    body main .stats__container .wrapper__itens {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+        padding-top: 5rem;
+    }
+    body main .stats__container .wrapper__itens .itens__rank .item__name {
+        font-size: 1rem;
+    }
+} 
+@media (max-width: 550px) { 
+    body main .stats__container .stats__container__title h1 {
+        font-size: 6rem;        
+    }
+}
+@media (max-width: 450px) {
+    body main .stats__container .stats__container__title h1 {
+        font-size: 5rem;
+    }
+    body main .stats__container .wrapper__itens .itens__rank .item__name {
+        padding-left: 1rem;
+    }
+    body main .stats__container .wrapper__itens .itens__rank .rating {
+        margin-right: 1rem;
+    }
+}
+@media (max-width: 375px) {
+    body main .stats__container .stats__container__title h1 {
+        font-size: 4.5rem;
+    }
+    body main .menu__hamburguer {
+        right: 5rem;
+    }
+}
+@media (max-width: 340px) {
+    body main .stats__container .stats__container__title h1 {
+        font-size: 4.2rem;
+    }
+}

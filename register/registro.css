@@ -1,0 +1,318 @@
+@import url(../global.css);
+body {
+    background-color: var(--destaque);
+}
+main {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'left''r'; 
+    overflow-y: hidden;
+}
+body main .left {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--destaque);  
+} 
+body main .left .link__home {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+body main .right {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: var(--fundoPreto);
+}
+body main .right,
+body main .left {
+    display: grid;
+    place-items: center;
+}
+body main .content {
+    width: 95%;
+    height: 95%;
+}
+body main .left .content {
+    width: 90%;
+}
+body main .left .content img {
+    width: 100%;
+    height: 100%;
+}
+body main .right .content form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    background: var(--fundoPreto);
+    border-radius: 0;
+    padding-bottom: 5rem;
+}
+body main .right .content form h1 {
+    font-size: 8rem;
+    font-weight: bold;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: var(--complementar2);
+}
+body main .right .content form .form__inputs {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+body main .right .content form .form__inputs .inputs {
+    width: 100%;
+    height: 25%;
+    position: relative;
+}
+
+body main .right .content form .form__inputs .inputs label {
+    font-size: 2.4rem;
+    color: var(--fundoBranco);
+    font-family: 'Montserrat', sans-serif;
+}
+body main .right .content form .form__inputs .inputs input {
+    width: 100%;
+    height: 7.5rem;
+    background: none;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    color: var(--fundoBranco);
+    font-size: 2.2rem;
+    font-family: 'Montserrat', sans-serif;
+    border-bottom: .3rem solid rgb(200,200,200, .25);
+}
+body main .right .content form .form__inputs .inputs .input__left,
+body main .right .content form .form__inputs .inputs .input__right {
+    width: 47%;
+    position: relative;
+    
+}
+body main .right .content form .form__inputs .inputs select {
+    width: 100%;
+    height: 7rem;
+    padding-left: 1rem;
+    font-size: 2.2rem;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: .6rem;
+}
+body main .right .content form .form__inputs .inputs input[type="radio"] {
+    display: none;
+}
+
+body main .right .content form .form__inputs .inputs#radio .radio__options {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    gap: 4.5rem;
+}
+body main .right .content form .form__inputs .inputs input[type="radio"] + label {
+    border: solid .3rem var(--complementar2); 
+    padding: 1rem;
+    width: 47%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4rem;
+    margin-top: .5rem;
+    border-radius: .6rem;
+    transition: all ease 100ms; 
+    font-weight: 600;   
+}
+
+body main .right .content form .form__inputs .inputs input[type="radio"] + label::before { 
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    border: solid .3rem var(--complementar2);
+    border-radius: 50%;
+    transition: all ease 100ms;
+}
+input[type="radio"]:checked + label {
+    background-color: var(--complementar2);
+    color: var(--fundoPreto) !important;
+}
+input[type="radio"]:checked + label::before {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--fundoPreto);
+}
+main .right .content form .form__inputs select {
+    margin-top: 1rem;
+}
+/* PASSWORD VISIBILITY */
+body main .left .content form .form__inputs #password__input {
+    position: relative;
+}
+#password__input svg {
+    position: absolute;
+    right: 4rem;
+    top: 40%;
+    width: 3.5rem;
+    height: 3.5rem;
+    fill: var(--fundoBranco);
+    cursor: pointer;
+}
+
+
+
+/* INPUTS COM 2 COLUNAS */
+.two__columns {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+body main .right .content form .form__inputs .inputs .bottom_bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: .3rem;
+    background-color: var(--fundoBranco);
+    transition: all ease 300ms;
+}
+body main .right .content form .form__inputs .inputs input:focus-within ~ .bottom_bar {
+    width: 100%;
+}
+body main .right .content form .already {
+    align-self: center;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--fundoBranco);
+    width: 90%;
+}
+body main .right .content form .already a {
+    text-decoration: underline;
+    color: #F29559;
+}
+body main .right .content form .btn {
+    width: 60%;
+    height: 10rem;
+    position: relative;
+    border-radius: .5rem;
+    transform: skewX(-15deg);
+    overflow: hidden;
+}
+body main .right .content form .btn #border { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--complementar2);
+}
+body main .right .content form .btn .bg {
+    position: absolute;
+    left: -.01rem;
+    top: -.01rem;
+    width: 0;
+    height: 101%;
+    background: var(--complementar2);
+    transition: all 400ms ease;
+    z-index: -1;
+}
+body main .right .content form .btn:hover .bg {
+    width: 101%;
+}
+
+body main .right .content form .btn .text {
+    width: 100%;
+    height: 100%;
+    font-size: 3.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--complementar2);
+    transition: all 300ms ease;
+}
+body main .right .content form .btn:hover .text {
+    color: var(--fundoPreto);
+    /* z-index: 1; */
+}
+body main .right .content form .btn input[type="submit"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    background: none;
+    border: none;
+    outline: none;  
+    opacity: 0;    
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    body main {
+        grid-template-columns: 1fr;
+    }
+    body main .left {
+        display: none;
+    }
+    body main .right .content form .form__title {
+        font-size: 12rem;
+        margin-bottom: 5rem;
+    }
+    body main .right .content form .form__inputs .inputs label {
+        font-size: 2.5rem;
+    }
+}
+@media (max-width: 600px) {
+    body main .right .content form .form__title {
+        font-size: 9rem;
+    }
+}
+@media(max-width: 440px) {
+    html {
+        font-size: 25%;
+    }
+    body main .right .content form .form__title {
+        font-size: 12rem;
+    }
+    body main .right .content form .form__inputs  {
+        row-gap: 5rem;
+    }
+    body main .right .content form .form__inputs .inputs .input__left,
+    body main .right .content form .form__inputs .inputs .input__right {
+        width: 100%;
+    }
+    .two__columns {
+        flex-direction: column;
+        row-gap: 5rem;
+    }
+    body main .right .content form .form__inputs .inputs label {
+        font-size: 3rem;
+    }
+    body main .right .content form .form__inputs .inputs input,
+    body main .right .content form .form__inputs .inputs select {
+        font-size: 3rem;
+        height: 8rem;
+    }
+    body main .right .content form .already {
+        text-align: right;
+    }
+}
+@media (max-width: 400px){
+    body main .right .content form .form__title {
+        font-size: 11rem !important;
+    }
+}
+@media (max-width: 375px){
+    body main .right .content form .form__title {
+        font-size: 10rem !important;
+    }
+}

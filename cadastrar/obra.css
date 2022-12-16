@@ -1,0 +1,130 @@
+html {
+    width: 100vw;
+    height: 100vh;
+}
+body main {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+body main .container {
+    width: 80%;
+    height: 100%;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+body main .container h1 {
+    font-size: 6rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 800;
+    color: #161925;
+}
+body main .container form {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    row-gap: 3rem;
+}
+body main .container form .input__box {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+input[type="file"] {
+    padding-top: 1rem;
+}
+body main .container form .input__box label {
+    width: 100%;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 600;
+    color: var(--fundoPreto);
+}   
+body main .container form .input__box input,
+body main .container form .input__box select, 
+body main .container form .input__box textarea {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    border: solid .1rem #161925;
+    border-radius: .5rem;
+    padding-left: 2rem;
+    height: 6rem;
+    width: 100%;
+    resize: none;
+}
+/* TAMANHO DOS INPUTS MÉDIOS */
+body main .container form .input__box.medium {
+    height: 14rem;
+}
+body main .container form .input__box.medium textarea {
+    height: 95%;
+}
+/* TAMANHO DOS INPUTS GRANDES */
+body main .container form .input__box.large {
+    height: 30rem;
+}
+body main .container form .input__box.large textarea {
+    height: 95%;
+}
+body main .container form .buttons {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 2rem;
+}
+body main .container form .buttons .btn {
+    width: 24rem;
+    height: 6rem;
+    border: solid .1rem var(--fundoPreto);
+    color: var(--fundoPreto);
+    background: none;
+    border-radius: .5rem;
+    justify-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 50ms ease;
+}
+body main .container form .buttons .btn:hover {
+    transform: scale(1.02);
+}
+input[type="file"] {
+    padding-top: 1rem;
+    border: solid .2rem var(--fundoPreto);
+    background-color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body main .container {
+        margin-top: 20rem;
+        width: 90%;
+    }
+}
+
+
+
+/* MODO ESCURO PERSONALIZADO */
+html[data-modo="dark--mode"] > body main .container h1 {
+    color: var(--complementar1);
+}
+html[data-modo="dark--mode"] > body main .container form .buttons .btn {
+    color: var(--fundoPreto);
+    border: solid .2rem var(--complementar1);
+}
+html[data-modo="dark--mode"] > body main .container form .buttons .btn:hover {
+    color: var(--fundoBranco);
+    background: var(--complementar1);
+}

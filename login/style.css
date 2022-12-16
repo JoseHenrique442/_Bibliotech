@@ -1,0 +1,264 @@
+@import url(../global.css);
+html {
+    font-size: 55%;
+}
+body {
+    background-color: var(--destaque);
+    height: 100vh;
+}
+main {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'left''r'; 
+}
+body main .right {
+    grid-area: 'left';
+    width: 100%;
+    height: 100%;
+    background-color: var(--destaque);
+} 
+body main .right a#link__home {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+body main .left {
+    grid-area: 'right';
+    width: 100%;
+    height: 100%;
+    background-color: var(--fundoPreto);
+}
+body main .right,
+body main .left {
+    display: grid;
+    place-items: center;
+}
+body main .content {
+    width: 80%;
+    height: 90%;
+}
+body main .right .content {
+    width: 90%;
+}
+body main .left .content {
+    display: grid;
+    place-items: center;
+}
+body main .right .content img {
+    width: 100%;
+    height: 100%;
+}
+body main .left .content form {
+    width: 90%;
+    height: 85%;
+    display: grid;
+    justify-items: center;
+    background: var(--fundoPreto);
+    border-radius: 0;
+    row-gap: 5rem;
+}
+body main .left .content form h1 {
+    font-size: 10rem;
+    font-weight: bold;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: var(--complementar2);
+}
+body main .left .content form .form__inputs {
+    width: 100%;
+    height: 80%;
+}
+body main .left .content form .form__inputs #input__1 {
+    margin-top: 0;
+}
+body main .left .content form .form__inputs .inputs {
+    position: relative;
+    width: 100%;
+    height: 10rem;
+    margin-top: 6rem;
+}
+body main .left .content form .form__inputs .inputs .bottom_bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: .3rem;
+    background: var(--fundoBranco);
+    transition: all ease 300ms;
+}
+body main .left .content form .form__inputs .inputs label {
+    font-size: 2.5rem;
+    color: var(--fundoBranco);
+    font-family: 'Montserrat', sans-serif;
+}
+body main .left .content form .form__inputs .inputs input {
+    width: 100%;
+    height: 7rem;
+    outline: none;
+    border: none;
+    background: none;
+    color: var(--fundoBranco); 
+    border-bottom: .3rem solid rgb(200,200,200, .25);
+}
+body main .left .content form .form__inputs #password__input {
+    position: relative;
+}
+#password__input svg {
+    position: absolute;
+    right: 4rem;
+    top: 40%;
+    width: 3.5rem;
+    height: 3.5rem;
+    fill: var(--fundoBranco);
+    cursor: pointer;
+}
+body main .left .content form .form__inputs .inputs input:focus-within ~ .bottom_bar {
+    width: 100%;
+}
+input[type="number"],
+input[type="text"],
+input[type="password"] {
+    font-size: 2.5rem;
+    padding-left: 1rem;
+}
+body main .left .content .links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    width: 100%;
+}
+body main .left .content .links .recover__link {
+    color: var(--fundoBranco);
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    margin-top: -2rem;
+    align-self: flex-end;
+}  
+body main .left .content .links .recover__link span {
+    text-decoration: underline;
+    color: var(--complementar2);
+}
+body main .left .content form .btn {
+    width: 60%;
+    height: 10rem;
+    position: relative;
+    border-radius: .5rem;
+    transform: skewX(-15deg);
+    overflow: hidden;
+}
+body main .left .content form .btn #border { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--complementar2);
+}
+body main .left .content form .btn .bg {
+    position: absolute;
+    left: -.01rem;
+    top: -.01rem;
+    width: 0;
+    height: 101%;
+    background: var(--complementar2);
+    transition: all 400ms ease;
+    z-index: -1;
+}
+body main .left .content form .btn:hover .bg {
+    width: 101%;
+}
+
+body main .left .content form .btn .text {
+    width: 100%;
+    height: 100%;
+    font-size: 3.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--complementar2);
+    transition: all 300ms ease;
+}
+body main .left .content form .btn:hover .text {
+    color: var(--fundoPreto);
+}
+body main .left .content form .btn input[type="submit"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    opacity: 0;       
+}
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 50%;
+    }   
+}
+@media (max-width: 1024px) {
+    body main .left .content form .form__title {
+        font-size: 12rem;
+    }
+    html {
+        font-size: 44%;
+    }
+    body main .right {
+        display: none;
+    }
+    body main {
+        grid-template-columns: 1fr;
+    }
+    body main .left .content form {
+        width: 80%;
+    }
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 40%;
+    }
+    body main .left .content form {
+        width: 95%;
+    }
+    /* SCROLL FIXED ! */
+    body main {
+        overflow-y: hidden;
+    }
+}
+@media (max-width: 600px) {
+    html {
+        font-size: 35%;
+    }
+    body main .left .content form .form__inputs .inputs label,
+    body main .left .content form .form__inputs .recover__link {
+        font-size: 2.8rem;
+    }
+}
+@media (max-width: 500px) {
+    body main .left .content .links {
+        row-gap: 5rem;
+    }
+}
+@media (max-width: 425px) {
+    html {
+        font-size: 33%;       
+    }
+    body main .left .content form {
+        row-gap: 0;
+        height: 60%;
+    }
+}
+@media (max-width: 375px) {
+    html {
+        font-size: 28%;
+    }
+}

@@ -1,0 +1,212 @@
+body nav .main__menu #profile {
+    background-color: var(--fundoBranco);
+}
+body nav .main__menu #profile a svg path {
+    fill: var(--fundoPreto);
+}
+
+main {
+    width: 100vw;
+    min-height: 120vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* ESQUERDA */
+main .left__side__profile {
+    width: 40%;
+    height: 95%;
+    background: var(--destaque);
+    position: relative;
+    border-radius: .5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 8fr;
+    grid-template-areas: '.'
+                         'info';
+    margin-left: 6rem;
+    margin-top: 2rem;
+}
+main .left__side__profile .profile__stats {
+    width: 100%;
+    height: 100%;
+    background-color: var(--destaque);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    column-gap: 4rem;
+    position: relative;
+    /* border-bottom: solid 2rem var(--fundoBranco); */
+    border-radius: .5rem;
+}
+main .left__side__profile .profile__stats .circle__img {
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    width: 28rem;
+    height: 28rem;
+    background: transparent;
+    border: solid .5rem var(--complementar2);
+    overflow: hidden;
+}
+main .left__side__profile .profile__stats .circle__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main .left__side__profile .profile__stats .profile__stats__name {
+    display: none;
+    font-size: 1.5rem;
+    color: #EBF8FF;
+    font-family: 'Montserrat Alternates', sans-serif;
+    width: 60%;
+    line-height: 8rem;
+    padding: 4rem 0;
+}
+main .left__side__profile .info {
+    grid-area: info;
+    width: 100%;
+    height: 100%;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-evenly;
+    gap: 1rem;
+    padding: 3rem 0;
+    color: #EBF8FF !important;
+}
+main .left__side__profile .info .info__label {
+    width: 100%;
+    height: 5rem;
+    position: relative;
+}
+main .left__side__profile .info .info__label h3 {
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-content: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 2rem;
+}
+
+/* DIREITA */
+main .right__side__profile {
+    /* width: 80rem; */
+    width: 40%;
+    height: 95%;
+    background: var(--destaque);
+    border-radius: .5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+main .right__side__profile h1 {
+    position: absolute;
+    left: 50%;
+    top: 2rem;
+    transform: translateX(-50%);
+    font-size: 5rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #F29559 !important;
+}
+main .right__side__profile .agenda__compromisses {
+    width: 80%;
+    height: 80%;
+    display: grid;
+    grid-template-rows: auto;
+    margin-top: 10rem;
+    padding-bottom: 5rem;
+}
+main .right__side__profile h3 {
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #EBF8FF !important;
+    line-height: 5rem;
+}
+
+@media (min-width: 1600px) {
+    main .right__side__profile,
+    main .left__side__profile {
+        width: 40%;
+    }
+}
+@media (max-width: 1025px) {
+    body main {
+        flex-direction: column;
+        align-items: center;
+    }
+    body main .left__side__profile,
+    body main .right__side__profile {
+        width: 75%;
+        margin-left: 5rem;
+    }
+    main .left__side__profile .profile__stats .circle__img {
+        top: 2rem;
+        position: static;
+        transform: translate(0,0);
+    }
+    main .left__side__profile .profile__stats .profile__stats__name {
+        display: block;
+    }
+}
+@media (max-width: 860px) {
+    main .left__side__profile .profile__stats .profile__stats__name  {
+        width: 50%;
+    }
+    main .left__side__profile .profile__stats .profile__stats__name h1 {
+        font-size: 2.2rem;
+    }
+}
+@media (max-width: 768px) {
+    body nav {
+        display: none;
+    }
+    body main .menu__hamburguer {
+        display: block;
+    }
+    body main {
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 150vh;
+    }
+    body main .left__side__profile,
+    body main .right__side__profile {
+        margin-left: 0;
+        margin-top: 0;   
+        width: 100%;
+     }
+     body main .left__side__profile {
+        justify-items: center;
+     }
+     body main .left__side__profile .info {
+        width: 90%;
+    } 
+}
+@media (max-width: 700px) {
+    main .left__side__profile .profile__stats .profile__stats__name h1 {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 500px) {
+    main .left__side__profile .profile__stats .profile__stats__name {
+        display: none;
+    }
+    main .right__side__profile {
+        padding-bottom: 5rem;
+    }
+    main .left__side__profile .profile__stats .circle__img {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

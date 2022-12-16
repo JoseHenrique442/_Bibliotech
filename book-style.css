@@ -1,0 +1,326 @@
+body main {
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    padding-bottom: 5rem;
+}
+/* CONTENT DIVIDIDO EM 3 PARTES */
+body main .content {
+    width: 90%;
+    height: 95%;
+    margin-left: 10rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+}
+/* PARTE 1 - LIVRO */
+body main .content .book__info {
+    width: 100%;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    
+}
+body main .content .book__info .box__image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body main .content .book__info .box__image img {
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+body main .content .book__info .info {
+    padding-left: 3rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 10% 70% 10%;
+}
+body main .content .book__info .info h1,
+body main .content .book__info .info h2,
+body main .content .book__info .info p {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--fundoPreto);
+}
+body main .content .book__info .info h1 {
+    font-weight: 800;
+    font-size: 4rem;
+    font-family: 'Montserrat', sans-serif;
+}
+body main .content .book__info .info h2 {
+    font-weight: 600;
+    font-size: 3rem;
+}
+body main .content .book__info .info p{
+    font-weight: 400;
+    font-size: 1.8rem;
+    text-align: justify;
+    overflow-y: scroll;
+    padding-right: 1rem;
+    overflow-wrap: anywhere;
+}
+/* COMPARTILHAR OBRA */
+body main .content .book__info .info .share {
+    display: flex;
+    align-items: center;    
+    column-gap: 2rem;
+    position: relative;
+}
+body main .content .book__info .info .share svg {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+body main .content .book__info .info .share svg path {
+    fill: var(--fundoPreto);
+}
+body main .content .book__info .info .share a {
+    text-decoration: underline;
+    color: var(--fundoPreto);
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+}
+body main .content .book__info .info .share .copied {
+    position: absolute;
+    top: -100%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--fundoPreto);
+    width: 20rem;
+    height: 5rem;
+    background: green;
+    z-index: 2;
+    overflow: inherit;
+    display: none;
+    animation: copied 4000ms;
+}
+body main .content .book__info .info .share .copied::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    bottom: -.5rem;
+    width: 3rem;
+    height: 3rem;
+    transform: translate(0, 0) rotateZ(45deg);
+    background-color: green;
+    z-index: 1;
+}
+@keyframes copied {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* PARTE 2 - AVALIAÇÃO */
+body main .content .rating {
+    width: 100%;
+    height: 50rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 5rem;
+    row-gap: 1rem;
+}
+body main .content .rating h1 {
+    font-size: 4rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 800;
+    color: var(--fundoPreto);
+}
+body main .content .rating form {
+    width: 50%;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+body main .content .rating h2 {
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--fundoPreto);
+}
+body main .content .rating form .estrelas input[type="radio"] {
+    display: none;
+}
+body main .content .rating form .estrelas label i::before {
+    content: '\f005';
+    color: yellow;
+    width: 4rem;
+    height: 4rem;
+}
+body main .content .rating form .estrelas input[type="radio"]:checked ~ label i::before {
+     color: #ccc;
+}
+i {
+    font-size: 5rem;
+    padding-left: .5rem;
+}
+
+body main .content .rating form button {
+    width: 18rem;
+    height: 4rem;
+    background: none;
+    border: solid .2rem var(--fundoPreto);
+    border-radius: .5rem;
+    color: var(--fundoPreto);
+    font-family: 'Montserrat', sans-serif;
+    transition: all 100ms ease;
+}
+body main .content .rating form button:hover {
+    transform: scale(1.02);
+}
+
+
+
+
+/* PARTE 3 - COMENTÁRIOS */
+body main .content .comment {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 3rem;
+}
+body main .content .comment h1{
+    font-size: 4rem;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+    color: var(--fundoPreto);
+}
+body main .content .comment form {
+    width: 100%;
+    height: 30rem;
+    gap: 1rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+body main .content .comment  .comment__box {
+    width: 70%;
+    height: 22.5rem;
+    border: solid .2rem var(--fundoPreto);
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+body main .content .comment  .comment__box  form {
+    position: relative;
+}
+body main .content .comment  .comment__box  form .excloi {
+    position: absolute;
+    right: -5rem;
+    top: -3rem;
+    width: 3rem;
+    height: 3rem;
+    background: red;
+    color: #fff;
+}
+body main .content .comment .comment__box .user__img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: solid .1rem var(--fundoPreto);
+}
+body main .content .comment .comment__box .user__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+body main .content .comment .comment__box .comment__input {
+    height: 15rem;
+    width: 70%;
+    display: flex;
+}
+body main .content .comment .comment__box .comment__input textarea {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    resize: none;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    border-bottom: solid .2rem var(--fundoPreto);
+    color: var(--fundoPreto);
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+}
+body main .content .comment form button {
+    position: absolute;
+    right: 30%;
+    bottom: 0;
+    width: 24rem;
+    height: 5rem;
+    border: solid .2rem var(--fundoPreto);
+    color: var(--fundoPreto);
+    border-radius: .5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    background: none;
+    cursor: pointer;  
+    transition: all 50ms ease;  
+}
+
+body main .content .comment form button:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 1024px) {
+    body main .content .comment form button {
+        right: 20%;
+    }
+    body main .content .comment .comment__box {
+        width: 80%;
+    }
+    body main .content .book__info {
+        grid-template-columns: 40% 60%;
+    }
+}
+@media (max-width: 900px) {
+    body main .content .book__info {
+        height: 70vh;
+    }
+}
+@media (max-width: 768px) {
+    body main .content {
+        margin-left: 0;
+        width: 95%;
+        margin-top: 10rem;
+    }
+}
+@media (max-width: 600px) {
+    body main .content .comment .comment__box {
+        width: 100%;
+    }
+    body main .content .comment form button {
+        right: 0;
+    }
+    body main .content .book__info {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    body main .content .book__info .info {
+        padding: 0;
+        margin-top: 2rem;
+        row-gap: 1rem;
+    }
+}

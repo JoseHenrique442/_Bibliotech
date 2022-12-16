@@ -1,0 +1,293 @@
+body {
+    height: 200vh;
+}
+body main {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+main a {
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: var(--fundoPreto); 
+}
+
+#home {
+    background-color: var(--fundoBranco);
+}
+#home svg path {
+    fill: var(--fundoPreto);
+}
+body main header {
+    width: 100%;
+    height: 4.5rem;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+    padding-right: 3rem;
+}
+body main header a {
+    width: 18rem;
+    height: 100%;
+    background: var(--destaque);
+    display: grid;
+    place-items: center;
+    border-radius: .5rem;
+    text-decoration: none;
+    color: #EBF8FF;
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+body main header a:hover {
+    transform: scale(1.01);
+    filter: brightness(1.05);
+}
+body main header .link__mod {
+    width: 18rem;
+    font-size: 1.5rem;
+}
+body main .seo {
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;  
+    align-items: center; 
+    justify-content: space-between;
+}
+body main .seo .input__wrapper {
+    width: 60%;
+    height: 6rem;
+    position: relative;
+}
+body main .seo input {
+    width: 100%;
+    height: 100%;
+    background: #d9d9d9;
+    padding-left: 16rem;
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #161925;
+    border-radius: .5rem;
+    transition: all 400ms ease;
+}
+body main .seo input:focus-within {
+    font-size: 2.5rem;
+    padding-left: 8rem;
+}
+body main .seo input:focus-within + svg {
+    width: 3.5rem;
+    height: 3.5rem;
+    left: 5%;
+}
+body main .seo .input__wrapper svg path {
+    fill: #161925 !important;
+}
+body main .seo .input__wrapper svg {
+    position: absolute;
+    top: 50%;
+    left: 12%;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 4rem;
+    transition: all 400ms ease;
+}
+body main .seo .seo__filter {
+    width: 100%;
+    height: 6rem; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body main .seo .seo__filter svg {
+    width: 3rem;
+    height: 3rem;
+}
+body main .seo .seo__filter span {
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--fundoPreto);
+
+}
+body main .seo .seo__selects {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+}
+body main .seo .seo__selects select {
+    height: 5rem;
+    width: 28rem;
+    background: #d9d9d9;
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 2rem;
+    border-radius: .5rem;
+}
+body main .bibliotech__collection {
+    width: 90%;
+    margin-top: 35rem;
+    margin-right: 4rem;
+    justify-self: flex-end;
+}
+
+/* SWIPER AAAA */
+body main .bibliotech__collection .content__swiper {
+    height: 60rem;   
+    position: relative;
+}
+body main .bibliotech__collection .content__swiper .swiper__title {
+    font-size: 6rem;
+    font-family: 'Montserrat', sans-serif; 
+    color: var(--fundoPreto);
+    font-weight: 800;
+}
+body main .bibliotech__collection .content__swiper .swiper {
+    width: 100%;
+    height: 50rem !important;
+    position: absolute;
+    left: 0;
+    top: 8rem;
+}
+.swiper-button-next, .swiper-button-prev {
+    transform: translateY(-50%);
+}
+body main .bibliotech__collection .content__swiper .swiper .swiper-wrapper {
+    height: 80% !important;
+}
+
+body main .bibliotech__collection .content__swiper .swiper .swiper-slide { 
+    font-size: 2rem;
+    border: solid .1rem var(--fundoPreto); /*REMOVER*/
+    color: var(--fundoBranco);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: .5rem;
+}   
+body main .bibliotech__collection .content__swiper .swiper .swiper-slide a {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: .5rem;
+}
+body main .bibliotech__collection .content__swiper .swiper .swiper-slide a img {
+    transition: all 3000ms ease;
+    height: 100%;
+    object-fit: cover;
+}
+body main .bibliotech__collection .content__swiper .swiper .swiper-slide p.nome {
+    position: absolute;
+    left: 50%;
+    bottom: -3rem;
+    transform: translateX(-50%);
+    width: 100%;
+    color: var(--fundoPreto);
+    font-size: 1.8rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+/* RESPONSIVE SWIPER */
+@media (min-width: 1440px) {
+    body main .bibliotech__collection .content__swiper .swiper {
+        height: 38rem;
+    }
+}
+@media (min-width: 1250px) {
+    body main .bibliotech__collection .content__swiper .swiper {
+        height: 40rem;
+    }
+}
+@media (max-width: 1024px) {
+    body main .seo {
+        width: 80%;
+    }
+}
+@media (max-width: 768px) {
+    body main .bibliotech__collection {
+       width: 95%;
+       justify-self: center;
+    }
+    body main .seo {
+        margin-top: 5rem;
+    }
+    body main .bibliotech__collection {
+        margin-top: 40rem;
+    }
+    body main .menu__hamburguer {
+        right: 4rem;
+        top: 4rem;
+    }
+    body main header {
+        top: 5rem;
+        justify-content: flex-start;
+        padding-left: 4rem;
+    }
+}
+@media (max-width: 650px){
+    body main header {
+        top: 15rem;
+        justify-content: center;
+    }
+    body main .seo {
+        margin-top: 15rem;
+        width: 90%;
+    }
+    body main .seo .seo__selects {
+
+    }
+    body main .bibliotech__collection {
+        margin-top: 50rem;
+    }
+}
+@media (max-width: 600px) {
+    body main .seo {
+        width: 90%;
+    }
+    body main .seo .input__wrapper {
+        
+    }
+    body main .seo .input__wrapper svg { 
+        left: 10%;
+    }
+    body main .seo .input__wrapper input{
+        padding-left: 10rem;
+    }
+    body main .seo .seo__selects  {
+        justify-content: space-between;
+    }
+    body main .seo .seo__selects select {
+        width: 21rem;
+    }
+}
+@media (max-width: 400px) {
+    body main .seo .seo__selects select {
+        width: 18rem;
+    }
+}
+@media (max-width: 340px) {
+    body main .seo .seo__selects select {
+        width: 16rem;
+    }
+}
+
+/* DARK MODE PERSONALIZADO */
+html[data-modo="dark--mode"] > body main .bibliotech__collection .content__swiper .swiper__title {
+    color: var(--complementar1) !important;
+}
+html[data-modo="dark--mode"] > body main .bibliotech__collection .content__swiper .swiper .swiper-slide {
+    background: #d9d9d9;
+}
